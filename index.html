@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <title>immorbit</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <script src="js/jquery-2.1.4.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/main.js"></script>
+
+
+    </head>
+    <body>
+        <nav><!-- slider panel -->
+         <ul class="list-unstyled main-menu">
+          
+          <!--Include your navigation here-->
+          <li class="text-right"><a href="#" id="nav-close">X</a></li>
+          <li><p class="navbar-text" style="color: #f2f2f2;">erweiteres Men&uuml;</p></li>
+          <li><a href="#">Menu One <span class="icon"></span></a></li>
+          <li><a href="#">Menu Two <span class="icon"></span></a></li>
+          <li><a href="#">Menu Three <span class="icon"></span></a></li>
+          <li><a href="#">Dropdown</a>
+            <ul class="list-unstyled">
+                <li class="sub-nav"><a href="#">Sub Menu One <span class="icon"></span></a></li>
+                <li class="sub-nav"><a href="#">Sub Menu Two <span class="icon"></span></a></li>
+                <li class="sub-nav"><a href="#">Sub Menu Three <span class="icon"></span></a></li>
+                <li class="sub-nav"><a href="#">Sub Menu Four <span class="icon"></span></a></li>
+                <li class="sub-nav"><a href="#">Sub Menu Five <span class="icon"></span></a></li>
+            </ul>
+          </li>
+          <li><a href="#">Menu Four <span class="icon"></span></a></li>
+          <li><a href="#">Menu Five <span class="icon"></span></a></li>
+        </ul>
+        </nav><!--slider panel end -->
+        
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a type="button" style="position: absolute; top: 10px; left: 10px; margin: 0 5px 0 5px;" class="btn btn-default navbar-btn nav-shadowbox hidden-lg hidden-md hidden-sm" href="#"><span class="glyphicon glyphicon-map-marker"></span></a>
+                    <p style="position: absolute; top: 10px; left: 70px; margin: 0 5px 0 5px;" class="navbar-text"><small>Suche in: <br>Berlin</small></p>
+                    <a id="nav-expander" type="button" style="position: absolute; top: 10px; right: 80px; margin: 0 5px 0 5px;" class="nav-expandertype btn btn-default navbar-btn navbar-right nav-shadowbox hidden-lg hidden-md hidden-sm" href="#"><span class="glyphicon glyphicon-search"></span></a></div>
+
+                    <a type="button" style="position: absolute; top: 10px; margin: 0 5px 0 5px;" class="btn btn-default navbar-btn nav-shadowbox hidden-xs" href="#"><span class="glyphicon glyphicon-map-marker"></span></a>
+                    <a type="button" style="position: absolute; top: 10px; right:10px; margin: 0 5px 0 5px;" class="btn btn-default navbar-btn nav-shadowbox hidden-xs" href="#"><span class="glyphicon glyphicon-search"></span></a>
+
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </div>
+        
+
+        <div class="container-fluid"><!-- For large screens (Desktop, Tablet) -->
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 style="font-size: 3.2em">Imm<span class="glyphicon glyphicon-globe"></span>rbit<a type="button" style="position: absolute; right: 10px; margin: 0 5px 0 5px;" class="btn btn-default btn-lg mid-shadowbox" href="#"><span class="glyphicon glyphicon-user"></span></a></h1>
+                </div>
+            </div>
+            <div class="row hidden-xs">
+                <div class="col-xs-3" style="background-color: #000; opacity: 0.9; color: #f2f2f2; height: 100vh">
+                      <h2 class="text-center">erweitert Suche</h2>
+                </div>
+
+                <div class="col-md-9">
+                    <div class="btn-group btn-toggle-buy-rent"> 
+                        <button class="btn btn-lg btn-buy-rent btn-primary active">Kaufen</button>
+                        <button class="btn btn-lg btn-buy-rent btn-default">Mieten</button>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="input-group btn btn-success mid-shadowbox">
+                                <div class="input-group-btn bs-dropdown-to-price-m2">
+                                    <button type="button" class="btn btn-success btn-lg dropdown-toggle bs-dropdown-to-select full-size" data-toggle="dropdown" tabindex="-1">
+                                        <span data-bind="bs-drp-sel-price-m2">Preis pro m² ?</span>
+                                        <input type="hidden" name="price_m2" data-bind="bs-drp-sel-value" value="price_m2">
+                                        <span class="caret"></span>
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu" style=" max-height: 300px; overflow: scroll; overflow-y: scroll; overflow-x: hidden; ">
+                                        <!-- Loop -->
+                                        <li data-price-m2="10€/m²"><a href="#">10€/m² </a></li>
+                                        <li data-price-m2="50€/m²"><a href="#">50€/m² </a></li>
+                                        <li data-price-m2="100€/m²"><a href="#">100€/m² </a></li>
+                                        <li data-price-m2="150€/m²"><a href="#">150€/m² </a></li>
+                                        <li data-price-m2="200€/m²"><a href="#">200€/m² </a></li>
+                                        <li data-price-m2="250€/m²"><a href="#">250€/m² </a></li>
+                                        <li data-price-m2="300€/m²"><a href="#">300€/m² </a></li>
+                                        <li data-price-m2="500€/m²"><a href="#">500€/m² </a></li>
+                                        <!-- END Loop -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="input-group btn btn-info mid-shadowbox text-size">
+                                <div class="input-group-btn bs-dropdown-to-immovible-kind">
+                                    <button type="button" class="btn btn-info btn-lg dropdown-toggle bs-dropdown-to-select full-size" data-toggle="dropdown" tabindex="-1">
+                                        <span data-bind="bs-drp-sel-immovible-kind">Art der Immobilie</span>
+                                        <input type="hidden" name="immovible-kind" data-bind="bs-drp-sel-immovible-kind" value="immovible-kind">
+                                        <span class="caret"></span>
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu" style=" max-height: 300px; overflow: scroll; overflow-y: scroll; overflow-x: hidden; ">
+                                        <!-- Loop -->
+                                        <li data-immovible-kind="Eigentumswohnung"><a href="#">Eigentumswohnung </a></li>
+                                        <li data-immovible-kind="Einfamilienhaus"><a href="#">Einfamilienhaus </a></li>
+                                        <li data-immovible-kind="Zweifamilienhaus"><a href="#">Zweifamilienhaus </a></li>
+                                        <li data-immovible-kind="Mehrfamilienhaus"><a href="#">Mehrfamilienhaus </a></li>
+                                        <li data-immovible-kind="Wohnblock"><a href="#">Wohnblock </a></li>
+                                        <li data-immovible-kind="Grundst&uuml;ck"><a href="#">Grundst&uuml;ck </a></li>
+                                        <li data-immovible-kind="Garage"><a href="#">Garage </a></li>
+                                        <!-- END Loop -->
+                                    </ul>
+                                </div>
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- container-fluid for large screens ENDS-->
+
+
+
+
+
+        <div class="container-fluid hidden-lg hidden-md hidden-sm"><!-- For mobile viewports -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="btn-group btn-toggle-buy-rent mid-shadowbox"> 
+                        <button class="btn btn-buy-rent btn-primary active">Kaufen</button>
+                        <button class="btn btn-buy-rent btn-default">Mieten</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <br>
+                <div class="row">
+                    <div class="col-xs-6 text-size">
+                        <div class="input-group btn btn-success mid-shadowbox">
+                            <div class="input-group-btn bs-dropdown-to-price-m2">
+                                <button type="button" class="btn btn-success dropdown-toggle bs-dropdown-to-select full-size" data-toggle="dropdown" tabindex="-1">
+                                    <span data-bind="bs-drp-sel-price-m2"><small>Preis pro m² ?</small></span>
+                                    <input type="hidden" name="price_m2" data-bind="bs-drp-sel-value" value="price_m2">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu" style="max-height: 300px; overflow: scroll; overflow-y: scroll; overflow-x: hidden; ">
+                                    <!-- Loop -->
+                                    <li data-price-m2="10€/m²"><a href="#">10€/m² </a></li>
+                                    <li data-price-m2="50€/m²"><a href="#">50€/m² </a></li>
+                                    <li data-price-m2="100€/m²"><a href="#">100€/m² </a></li>
+                                    <li data-price-m2="150€/m²"><a href="#">150€/m² </a></li>
+                                    <li data-price-m2="200€/m²"><a href="#">200€/m² </a></li>
+                                    <li data-price-m2="250€/m²"><a href="#">250€/m² </a></li>
+                                    <li data-price-m2="300€/m²"><a href="#">300€/m² </a></li>
+                                    <li data-price-m2="500€/m²"><a href="#">500€/m² </a></li>
+                                    <!-- END Loop -->
+                                </ul>
+                            </div>
+                        </div>                            </div>
+
+                    <div class="col-xs-6">
+                        <div class="input-group btn btn-info mid-shadowbox">
+                            <div class="input-group-btn bs-dropdown-to-immovible-kind">
+                                <button type="button" class="btn btn-info dropdown-toggle bs-dropdown-to-select full-size" data-toggle="dropdown" tabindex="-1">
+                                    <span data-bind="bs-drp-sel-immovible-kind"><small>Art der Immobilie</small></span>
+                                    <input type="hidden" name="immovible-kind" data-bind="bs-drp-sel-immovible-kind" value="immovible-kind">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu" style=" max-height: 300px; overflow: scroll; overflow-y: scroll; overflow-x: hidden; ">
+                                    <!-- Loop -->
+                                    <li data-immovible-kind="Eigentumswohnung"><a href="#">Eigentumswohnung </a></li>
+                                    <li data-immovible-kind="Einfamilienhaus"><a href="#">Einfamilienhaus </a></li>
+                                    <li data-immovible-kind="Zweifamilienhaus"><a href="#">Zweifamilienhaus </a></li>
+                                    <li data-immovible-kind="Mehrfamilienhaus"><a href="#">Mehrfamilienhaus </a></li>
+                                    <li data-immovible-kind="Wohnblock"><a href="#">Wohnblock </a></li>
+                                    <li data-immovible-kind="Grundstueck²"><a href="#">Grundst&uuml;ck </a></li>
+                                    <li data-immovible-kind="Garage"><a href="#">Garage </a></li>
+                                    <!-- END Loop -->
+                                </ul>
+                            </div>
+                        </div>                            
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-3 col-xs-3">
+                        <a class="btn btn-default" href="#" role="button"><img alt="default house imgage" src="img/home-icon.png"><br>Link</a>
+                    </div>
+                    <div class="col-md-3 col-xs-3">
+                        <a class="btn btn-default" href="#" role="button"><img alt="default house imgage" src="img/home-icon.png"><br>Link</a>
+                    </div>
+                    <div class="col-md-3 col-xs-3">
+                        <a class="btn btn-default" href="#" role="button"><img alt="default house imgage" src="img/home-icon.png"><br>Link</a>
+                    </div>
+                    <div class="col-md-3 col-xs-3">
+                        <a class="btn btn-default" href="#" role="button"><img alt="default house imgage" src="img/home-icon.png"><br>Link</a>
+                    </div>
+                </div>
+                <br>
+
+                <div class="row">
+                    <div class="col-md-3 col-xs-3">
+                        <a class="btn btn-default" href="#" role="button"><img alt="default house imgage" src="img/home-icon.png"><br>Link</a>
+                    </div>
+                    <div class="col-md-3 col-xs-3">
+                        <a class="btn btn-default" href="#" role="button"><img alt="default house imgage" src="img/home-icon.png"><br>Link</a>
+                    </div>
+                    <div class="col-md-3 col-xs-3">
+                        <a class="btn btn-default" href="#" role="button"><img alt="default house imgage" src="img/home-icon.png"><br>Link</a>
+                    </div>
+                    <div class="col-md-3 col-xs-3">
+                        <a class="btn btn-default" href="#" role="button"><img alt="default house imgage" src="img/home-icon.png"><br>Link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
