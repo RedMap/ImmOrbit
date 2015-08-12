@@ -1,8 +1,8 @@
-/* 
-    Created on : 08.08.2015, 20:48:27
-    Author     : Seweryn Jan Grynfelder
-*/
-        body { margin:0 !important; padding-top: 70px;}
+
+body { 
+    margin:0 !important; 
+    padding-top: 70px;
+}
         /*#page { width: 80%;}*//*1024px;*/
 
 .nav-shadowbox {

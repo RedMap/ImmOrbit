@@ -1,8 +1,3 @@
-/* 
- Created on : 08.08.2015, 20:48:27
- Author     : Seweryn Jan Grynfelder
- */
-
 /* MIT-License alilishan
  * http://bootsnipp.com/snippets/featured/multiple-control-input-group
  */
