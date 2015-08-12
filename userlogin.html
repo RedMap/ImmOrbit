@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <title>immorbit</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="stylesheet" href="vendor/normalize/normalize.css">
+        <link rel="stylesheet" href="vendor/bootstrap/bootstrap.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="vendor/jquery/jquery-2.1.4.min.js"></script>
+        <script src="vendor/bootstrap/bootstrap.js"></script>
+        <script src="vendor/multiple_control_input/multiple_control_input.js"></script>
+        <script src="js/main.js"></script>
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top"><!-- fixed navbar -->
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <button type="button" style="position: absolute; top: 10px; left: 10px; margin: 0 5px 0 5px;" class="btn btn-default navbar-btn nav-shadowbox hidden-lg hidden-md hidden-sm" data-lat="23, 18.33" data-toggle="modal" data-target="#locationMapModal"><span class="glyphicon glyphicon-map-marker"></span></button>
+                    <p style="position: absolute; top: 10px; left: 70px; margin: 0 5px 0 5px;" class="navbar-text"><small>Suche in: <br>Berlin</small></p>
+                    <a id="nav-expander" type="button" style="position: absolute; top: 10px; right: 80px; margin: 0 5px 0 5px;" class="nav-expandertype btn btn-default navbar-btn navbar-right nav-shadowbox hidden-lg hidden-md hidden-sm" href="#"><span class="glyphicon glyphicon-search"></span></a></div>
+                <button type="button" style="position: absolute; top: 10px; margin: 0 5px 0 5px;" class="btn btn-default navbar-btn nav-shadowbox hidden-xs" data-lat="23, 18.33" data-toggle="modal" data-target="#locationMapModal"><span class="glyphicon glyphicon-map-marker"></span></button>
+
+            </div><!-- navbar toggling END -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+
+        <div class="container"><!-- Location Map Modal Modal -->
+            <div class="modal fade" id="locationMapModal" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Suche in:</h4>
+                        </div>
+                        <div class="modal-body">
+                            <!-- Google Maps Code Kopieren -->
+                            <iframe id="glu" width="100%" onload="resize_iframe()" src="https://maps.google.de/maps?hl=de&q=Berlin+(Berlin)&ie=UTF8&t=&z=12&iwloc=B&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" ><a href="https://www.siteway.de/maps-generator/" title="kostenlose Google Karten für Ihre Website">(c) Homepage Google Maps Tool</a></iframe>
+
+                            <br />
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">Abbrechen</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- Location Map Modal END -->
+
+
+        <div class="container"><!-- Login Modal -->
+            <div class="modal fade" id="loginModal" role="dialog">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Logout</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p><h3>Ausloggen?  <i class="fa fa-lock"></i></h3></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">Abbrechen</button>
+                            <a type="button" class="btn btn-sm btn-default" href="http://localhost/immorbit/ImmOrbit/index.html">Ausloggen!</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- Login Modal END -->
+        <div class="container-fluid hidden-xs"><!-- For large screens (Desktop, Tablet) -->
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 style="font-size: 3.2em">Imm<span class="glyphicon glyphicon-globe"></span>rbit<button type="button" style="position: absolute; right: 10px; margin: 0 5px 0 5px;" class="btn btn-default btn-lg mid-shadowbox" data-toggle="modal" data-target="#loginModal"><span class="glyphicon glyphicon-user"></span></button></h1>
+                    <p><h2>Herzlich Willkommen!</h2></p>
+                </div>
+            </div>
+        </div><!-- container-fluid for large screens ENDS-->
+
+
+        <div class="container-fluid hidden-lg hidden-md hidden-sm"><!-- For mobile viewports -->
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 style="font-size: 3.2em">Imm<span class="glyphicon glyphicon-globe"></span>rbit<button type="button" style="position: absolute; right: 10px; margin: 0 5px 0 5px;" class="btn btn-default btn-lg mid-shadowbox" data-toggle="modal" data-target="#loginModal"><span class="glyphicon glyphicon-user"></span></button></h1>
+                    <h2>Herzlich Willkommen!</h2>
+                </div><br>
+                <div class="row">
+                    <div class="col-xs-3 well">
+                        <img src="img/user.png" class="img-responsive" alt="Cinque Terre" width="304" height="236">
+                    </div>
+                    <div class="col-xs-9">
+                        <table id="mainTable" class="table table-striped">
+                            <thead><tr><th>Name</th><th>Vorname</th></thead>
+                            <tbody>
+                                <tr><td>Ihr Name</td><td>Ihr Vorname</td>
+                            </tbody>
+                        </table>
+                        <table id="mainTable" class="table table-striped">
+                            <thead><tr><th>E-Mail</th></thead>
+                            <tbody>
+                                <tr><td>Ihre Mail-Adresse</td>
+                            </tbody>
+                        </table>
+                        <table id="mainTable" class="table table-striped">
+                            <thead><tr><th>Telefon-Nr.</th></thead>
+                            <tbody>
+                                <tr><td>Ihre Telefon-Nr.</td>
+                            </tbody>
+                    </div>
+                </div>
+
+            </div>
+        </div><!-- For mobile viewports END -->
+    </body>
+</html>
