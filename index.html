@@ -6,12 +6,40 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="vendor/normalize/normalize.css">
+        <link rel="stylesheet" href="vendor/bootstrap/bootstrap.css">
         <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <script src="js/jquery-2.1.4.min.js"></script>
-        <script src="js/bootstrap.js"></script>
+        <script src="vendor/jquery/jquery-2.1.4.min.js"></script>
+        <script src="vendor/bootstrap/bootstrap.js"></script>
+        <script src="vendor/multiple_control_input/multiple_control_input.js"></script>
         <script src="js/main.js"></script>
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+<script language="JavaScript">
+<!--//VORERST ZU DEMOZECKEN !!!
+function resize_iframe()
+{
+
+	var height=window.innerWidth;//Firefox
+	if (document.body.clientHeight)
+	{
+		height=document.body.clientHeight /100 * 60;//IE
+	}
+	//resize the iframe according to the size of the
+	//window (all these should be on the same line)
+	document.getElementById("glu").style.height=parseInt(height-
+	document.getElementById("glu").offsetTop-8)+"px";
+}
+
+// this will resize the iframe every
+// time you change the size of the window.
+window.onresize=resize_iframe; 
+
+//Instead of using this you can use: 
+//	<BODY onresize="resize_iframe()">
+
+
+//-->
+</script>
     </head>
     <body>
         <nav><!-- slider panel -->
@@ -47,11 +75,11 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <button type="button" style="position: absolute; top: 10px; left: 10px; margin: 0 5px 0 5px;" class="btn btn-default navbar-btn nav-shadowbox hidden-lg hidden-md hidden-sm" data-toggle="modal" data-target="#locationMapModal"><span class="glyphicon glyphicon-map-marker"></span></button>
+                    <button type="button" style="position: absolute; top: 10px; left: 10px; margin: 0 5px 0 5px;" class="btn btn-default navbar-btn nav-shadowbox hidden-lg hidden-md hidden-sm" data-lat="23, 18.33" data-toggle="modal" data-target="#locationMapModal"><span class="glyphicon glyphicon-map-marker"></span></button>
                     <p style="position: absolute; top: 10px; left: 70px; margin: 0 5px 0 5px;" class="navbar-text"><small>Suche in: <br>Berlin</small></p>
                     <a id="nav-expander" type="button" style="position: absolute; top: 10px; right: 80px; margin: 0 5px 0 5px;" class="nav-expandertype btn btn-default navbar-btn navbar-right nav-shadowbox hidden-lg hidden-md hidden-sm" href="#"><span class="glyphicon glyphicon-search"></span></a></div>
-                <button type="button" style="position: absolute; top: 10px; margin: 0 5px 0 5px;" class="btn btn-default navbar-btn nav-shadowbox hidden-xs" data-toggle="modal" data-target="#locationMapModal"><span class="glyphicon glyphicon-map-marker"></span></button>
-                
+                <button type="button" style="position: absolute; top: 10px; margin: 0 5px 0 5px;" class="btn btn-default navbar-btn nav-shadowbox hidden-xs" data-lat="23, 18.33" data-toggle="modal" data-target="#locationMapModal"><span class="glyphicon glyphicon-map-marker"></span></button>
+
             </div><!-- navbar toggling END -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             </div><!-- /.navbar-collapse -->
@@ -66,12 +94,13 @@
                             <h4 class="modal-title">Suche in:</h4>
                         </div>
                         <div class="modal-body">
-                            <p>
-                                Map
-                            </p>
-                        </div>
+                            <!-- Google Maps Code Kopieren -->
+                            <iframe id="glu" width="100%" onload="resize_iframe()" src="https://maps.google.de/maps?hl=de&q=Berlin+(Berlin)&ie=UTF8&t=&z=12&iwloc=B&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" ><a href="https://www.siteway.de/maps-generator/" title="kostenlose Google Karten für Ihre Website">(c) Homepage Google Maps Tool</a></iframe>
+
+                            <br />
+                                                    </div>
                         <div class="modal-footer">
-                        <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">Abbrechen</button>
+                            <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">Abbrechen</button>
                         </div>
                     </div>
                 </div>
@@ -118,13 +147,13 @@
                 </div>
             </div>
         </div><!-- Login Modal END -->
-        <div class="container-fluid"><!-- For large screens (Desktop, Tablet) -->
+        <div class="container-fluid hidden-xs"><!-- For large screens (Desktop, Tablet) -->
             <div class="row">
                 <div class="col-md-12">
                     <h1 style="font-size: 3.2em">Imm<span class="glyphicon glyphicon-globe"></span>rbit<button type="button" style="position: absolute; right: 10px; margin: 0 5px 0 5px;" class="btn btn-default btn-lg mid-shadowbox" data-toggle="modal" data-target="#loginModal"><span class="glyphicon glyphicon-user"></span></button></h1>
                 </div>
             </div>
-            <div class="row hidden-xs">
+            <div class="row">
                 <div class="col-xs-3" style="background-color: #000; opacity: 0.9; color: #f2f2f2; height: 100vh">
                     <h2 class="text-center"><button type="button" class="btn btn-default text-right"><span class="glyphicon glyphicon-search"></span></button>&nbsp;erweitert Suche</h2>
                 </div>
@@ -188,109 +217,91 @@
                             </div>                            
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <a class="btn btn-default objekt-style text-center" href="#" role="button"><img alt="default house imgage" src="img/home-icon.png"><br>Link</a>
+                        </div>
+                        <div class="col-md-6">
+                            <a class="btn btn-default objekt-style text-center" href="#" role="button"><img alt="default house imgage" src="img/home-icon.png"><br>Link</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div><!-- container-fluid for large screens ENDS-->
 
 
-
-
-
         <div class="container-fluid hidden-lg hidden-md hidden-sm"><!-- For mobile viewports -->
             <div class="row">
                 <div class="col-md-12">
-                    <div class="btn-group btn-toggle-buy-rent mid-shadowbox"> 
-                        <button class="btn btn-buy-rent btn-primary active">Kaufen</button>
-                        <button class="btn btn-buy-rent btn-default">Mieten</button>
-                    </div>
+                    <h1 style="font-size: 3.2em">Imm<span class="glyphicon glyphicon-globe"></span>rbit<button type="button" style="position: absolute; right: 10px; margin: 0 5px 0 5px;" class="btn btn-default btn-lg mid-shadowbox" data-toggle="modal" data-target="#loginModal"><span class="glyphicon glyphicon-user"></span></button></h1>
                 </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-xs-6 text-size">
-                    <div class="input-group btn btn-success mid-shadowbox">
-                        <div class="input-group-btn bs-dropdown-to-price-m2">
-                            <button type="button" class="btn btn-success dropdown-toggle bs-dropdown-to-select full-size" data-toggle="dropdown" tabindex="-1">
-                                <span data-bind="bs-drp-sel-price-m2"><small>Preis pro m² ?</small></span>
-                                <input type="hidden" name="price_m2" data-bind="bs-drp-sel-value" value="price_m2">
-                                <span class="caret"></span>
-                                <span class="sr-only">Toggle Dropdown</span>
-                            </button>
-                            <ul class="dropdown-menu" role="menu" style="max-height: 300px; overflow: scroll; overflow-y: scroll; overflow-x: hidden; ">
-                                <!-- Loop -->
-                                <li data-price-m2="10€/m²"><a href="#">10€/m² </a></li>
-                                <li data-price-m2="50€/m²"><a href="#">50€/m² </a></li>
-                                <li data-price-m2="100€/m²"><a href="#">100€/m² </a></li>
-                                <li data-price-m2="150€/m²"><a href="#">150€/m² </a></li>
-                                <li data-price-m2="200€/m²"><a href="#">200€/m² </a></li>
-                                <li data-price-m2="250€/m²"><a href="#">250€/m² </a></li>
-                                <li data-price-m2="300€/m²"><a href="#">300€/m² </a></li>
-                                <li data-price-m2="500€/m²"><a href="#">500€/m² </a></li>
-                                <!-- END Loop -->
-                            </ul>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="btn-group btn-toggle-buy-rent mid-shadowbox"> 
+                            <button class="btn btn-buy-rent btn-primary active">Kaufen</button>
+                            <button class="btn btn-buy-rent btn-default">Mieten</button>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-xs-6">
-                    <div class="input-group btn btn-info mid-shadowbox">
-                        <div class="input-group-btn bs-dropdown-to-immovible-kind">
-                            <button type="button" class="btn btn-info dropdown-toggle bs-dropdown-to-select full-size" data-toggle="dropdown" tabindex="-1">
-                                <span data-bind="bs-drp-sel-immovible-kind"><small>Art der Immobilie</small></span>
-                                <input type="hidden" name="immovible-kind" data-bind="bs-drp-sel-immovible-kind" value="immovible-kind">
-                                <span class="caret"></span>
-                                <span class="sr-only">Toggle Dropdown</span>
-                            </button>
-                            <ul class="dropdown-menu" role="menu" style=" max-height: 300px; overflow: scroll; overflow-y: scroll; overflow-x: hidden; ">
-                                <!-- Loop -->
-                                <li data-immovible-kind="Eigentumswohnung"><a href="#">Eigentumswohnung </a></li>
-                                <li data-immovible-kind="Einfamilienhaus"><a href="#">Einfamilienhaus </a></li>
-                                <li data-immovible-kind="Zweifamilienhaus"><a href="#">Zweifamilienhaus </a></li>
-                                <li data-immovible-kind="Mehrfamilienhaus"><a href="#">Mehrfamilienhaus </a></li>
-                                <li data-immovible-kind="Wohnblock"><a href="#">Wohnblock </a></li>
-                                <li data-immovible-kind="Grundstueck²"><a href="#">Grundst&uuml;ck </a></li>
-                                <li data-immovible-kind="Garage"><a href="#">Garage </a></li>
-                                <!-- END Loop -->
-                            </ul>
+                <br>
+                <div class="row">
+                    <div class="col-xs-6 text-size">
+                        <div class="input-group btn btn-success mid-shadowbox">
+                            <div class="input-group-btn bs-dropdown-to-price-m2">
+                                <button type="button" class="btn btn-success dropdown-toggle bs-dropdown-to-select full-size" data-toggle="dropdown" tabindex="-1">
+                                    <span data-bind="bs-drp-sel-price-m2"><small>Preis pro m² ?</small></span>
+                                    <input type="hidden" name="price_m2" data-bind="bs-drp-sel-value" value="price_m2">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu" style="max-height: 300px; overflow: scroll; overflow-y: scroll; overflow-x: hidden; ">
+                                    <!-- Loop -->
+                                    <li data-price-m2="10€/m²"><a href="#">10€/m² </a></li>
+                                    <li data-price-m2="50€/m²"><a href="#">50€/m² </a></li>
+                                    <li data-price-m2="100€/m²"><a href="#">100€/m² </a></li>
+                                    <li data-price-m2="150€/m²"><a href="#">150€/m² </a></li>
+                                    <li data-price-m2="200€/m²"><a href="#">200€/m² </a></li>
+                                    <li data-price-m2="250€/m²"><a href="#">250€/m² </a></li>
+                                    <li data-price-m2="300€/m²"><a href="#">300€/m² </a></li>
+                                    <li data-price-m2="500€/m²"><a href="#">500€/m² </a></li>
+                                    <!-- END Loop -->
+                                </ul>
+                            </div>
                         </div>
-                    </div>                            
-                </div>
-            </div>
-        </div>
-        <br>
-        <br>
+                    </div>
 
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-3 col-xs-3">
-                    <a class="btn btn-default" href="#" role="button"><img alt="default house imgage" src="img/home-icon.png"><br>Link</a>
+                    <div class="col-xs-6">
+                        <div class="input-group btn btn-info mid-shadowbox">
+                            <div class="input-group-btn bs-dropdown-to-immovible-kind">
+                                <button type="button" class="btn btn-info dropdown-toggle bs-dropdown-to-select full-size" data-toggle="dropdown" tabindex="-1">
+                                    <span data-bind="bs-drp-sel-immovible-kind"><small>Art der Immobilie</small></span>
+                                    <input type="hidden" name="immovible-kind" data-bind="bs-drp-sel-immovible-kind" value="immovible-kind">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu" style=" max-height: 300px; overflow: scroll; overflow-y: scroll; overflow-x: hidden; ">
+                                    <!-- Loop -->
+                                    <li data-immovible-kind="Eigentumswohnung"><a href="#">Eigentumswohnung </a></li>
+                                    <li data-immovible-kind="Einfamilienhaus"><a href="#">Einfamilienhaus </a></li>
+                                    <li data-immovible-kind="Zweifamilienhaus"><a href="#">Zweifamilienhaus </a></li>
+                                    <li data-immovible-kind="Mehrfamilienhaus"><a href="#">Mehrfamilienhaus </a></li>
+                                    <li data-immovible-kind="Wohnblock"><a href="#">Wohnblock </a></li>
+                                    <li data-immovible-kind="Grundstueck²"><a href="#">Grundst&uuml;ck </a></li>
+                                    <li data-immovible-kind="Garage"><a href="#">Garage </a></li>
+                                    <!-- END Loop -->
+                                </ul>
+                            </div>
+                        </div>                            
+                    </div>
                 </div>
-                <div class="col-md-3 col-xs-3">
-                    <a class="btn btn-default" href="#" role="button"><img alt="default house imgage" src="img/home-icon.png"><br>Link</a>
+                <div class="row">
+                    <div class="col-md-6">
+                        <a class="btn btn-default objekt-style text-center" href="#" role="button"><img alt="default house imgage" src="img/home-icon.png"><br>Link</a>
+                    </div>
+                    <div class="col-md-6">
+                        <a class="btn btn-default objekt-style text-center" href="#" role="button"><img alt="default house imgage" src="img/home-icon.png"><br>Link</a>
+                    </div>
                 </div>
-                <div class="col-md-3 col-xs-3">
-                    <a class="btn btn-default" href="#" role="button"><img alt="default house imgage" src="img/home-icon.png"><br>Link</a>
-                </div>
-                <div class="col-md-3 col-xs-3">
-                    <a class="btn btn-default" href="#" role="button"><img alt="default house imgage" src="img/home-icon.png"><br>Link</a>
-                </div>
-            </div>
-            <br>
-
-            <div class="row">
-                <div class="col-md-3 col-xs-3">
-                    <a class="btn btn-default" href="#" role="button"><img alt="default house imgage" src="img/home-icon.png"><br>Link</a>
-                </div>
-                <div class="col-md-3 col-xs-3">
-                    <a class="btn btn-default" href="#" role="button"><img alt="default house imgage" src="img/home-icon.png"><br>Link</a>
-                </div>
-                <div class="col-md-3 col-xs-3">
-                    <a class="btn btn-default" href="#" role="button"><img alt="default house imgage" src="img/home-icon.png"><br>Link</a>
-                </div>
-                <div class="col-md-3 col-xs-3">
-                    <a class="btn btn-default" href="#" role="button"><img alt="default house imgage" src="img/home-icon.png"><br>Link</a>
-                </div>
-            </div>
-        </div>
+            </div><!-- For mobile viewports END -->
     </body>
 </html>
