@@ -14,6 +14,7 @@
         <script src="vendor/multiple_control_input/multiple_control_input.js"></script>
         <script src="vendor/navgoco/navgoco.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/login.js"></script>
         <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
 <script language="JavaScript">
 <!--//VORERST ZU DEMOZECKEN !!!
@@ -121,19 +122,19 @@ window.onresize=resize_iframe;
                             <p>Loggen Sie sich in Ihren Account</p>
                             <form class="form-inline">
                                 <div class="form-group">
-                                    <label class="sr-only" for="exampleInputEmail3">Email</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
+                                    <label class="sr-only" for="username">Benutzername</label>
+                                    <input type="email" class="form-control" id="username" placeholder="Ihr Benutzername">
                                 </div>
                                 <div class="form-group">
-                                    <label class="sr-only" for="exampleInputPassword3">Passwort</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password">
+                                    <label class="sr-only" for="password">Passwort</label>
+                                    <input type="password" class="form-control" id="password" placeholder="Password">
                                 </div>
                                 <div class="checkbox">
                                     <label>
                                         <input type="checkbox"> Eingelogt bleiben
                                     </label>
                                 </div>
-                                <a type="button" class="btn btn-default mid-shadowbox" href="http://localhost/immorbit/ImmOrbit/userlogin.html">Login</a>
+                                <a class="btn btn-default mid-shadowbox" type="submit" id="submit">Login</a>
                             </form>
                             <br>
                             <br>

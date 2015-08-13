@@ -10,6 +10,10 @@ $(document).ready(function(){
       		e.preventDefault();
       		$('body').removeClass('nav-expanded');
       	});
+        $('#nav-close-2').on('click',function(e){
+      		e.preventDefault();
+      		$('body').removeClass('nav-expanded');
+      	});
 
       	// Initialize navgoco with default options
         $(".main-menu").navgoco({
