@@ -14,7 +14,7 @@ $(document).ready(function(){
              
 
             if(username == Person.username && password == Person.password){
-                   window.open(members);
+                   location.assign(members);
             }else{
                 alert("ERROR: Benutzername und/ oder Passwort sind falsch!");
             }
