@@ -107,7 +107,7 @@ nav {
   top: 0;
   width: 20em;
   z-index: 2000;
-
+  
   transition: right 0.3s ease-in-out 0s;
   -webkit-transition: right 0.3s ease-in-out 0s;
   -moz-transition: right 0.3s ease-in-out 0s;
@@ -132,6 +132,7 @@ body.nav-expanded {
   font-size: 24px;
   padding-right: 10px;
 }
+
 .main-menu {
   padding-top: 12px;
 }
@@ -211,4 +212,5 @@ body.nav-expanded {
   margin: 0.1em 0.8em -0.1em 0;
   opacity: 1;
 }
+
 //slider panel end

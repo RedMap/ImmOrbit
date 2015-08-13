@@ -16,7 +16,7 @@ $(document).ready(function(){
             caret: '<span class="caret"></span>',
             accordion: false,
             openClass: 'open',
-            save: true,
+            save: false,
             cookie: {
                 name: 'navgoco',
                 expires: false,

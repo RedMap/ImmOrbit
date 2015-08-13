@@ -12,10 +12,31 @@
         <script src="vendor/jquery/jquery-2.1.4.min.js"></script>
         <script src="vendor/bootstrap/bootstrap.js"></script>
         <script src="vendor/multiple_control_input/multiple_control_input.js"></script>
+        <script src="vendor/navgoco/navgoco.js"></script>
         <script src="js/main.js"></script>
         <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
     </head>
     <body>
+            <nav><!-- slider panel -->
+            <ul class="list-unstyled main-menu">
+
+                <!--Include your navigation here-->
+                <li class="text-right"><a href="#" id="nav-close">X</a></li>
+                <li><p class="navbar-text" style="color: #f2f2f2;"><i>Einstellungen</i></p></li>
+                <li><a href="#">Meine Objekt <span class="glyphicon glyphicon-th-list"></span></a></li>
+                <li><a href="#">Objekt einstellen <span class="glyphicon glyphicon-ok-circle"></span></a></li>
+                <li><a href="#">Nachrichten <span class="glyphicon glyphicon-envelope"></span></a>
+                    <ul class="list-unstyled">
+                        <li class="sub-nav"><a href="#">Posteingang <span class="glyphicon glyphicon-inbox"></span></a></li>
+                        <li class="sub-nav"><a href="#">Postausgang <span class="glyphicon glyphicon-send"></span></a></li>
+                        <li class="sub-nav"><a href="#">Mail schreiben <span class="glyphicon glyphicon-pencil"></span></a></li>
+                        <li class="sub-nav"><a href="#">Spam <span class="glyphicon glyphicon-warning-sign"></span></a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Kontakte <span class="glyphicon glyphicon-phone-alt"></span></a></li>
+            </ul>
+        </nav><!--slider panel end -->
+    
         <div class="navbar navbar-inverse navbar-fixed-top"><!-- fixed navbar -->
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -28,7 +49,7 @@
                     </button>
                     <button type="button" style="position: absolute; top: 10px; left: 10px; margin: 0 5px 0 5px;" class="btn btn-default navbar-btn nav-shadowbox hidden-lg hidden-md hidden-sm" data-lat="23, 18.33" data-toggle="modal" data-target="#locationMapModal"><span class="glyphicon glyphicon-map-marker"></span></button>
                     <p style="position: absolute; top: 10px; left: 70px; margin: 0 5px 0 5px;" class="navbar-text"><small>Suche in: <br>Berlin</small></p>
-                    <a id="nav-expander" type="button" style="position: absolute; top: 10px; right: 80px; margin: 0 5px 0 5px;" class="nav-expandertype btn btn-default navbar-btn navbar-right nav-shadowbox hidden-lg hidden-md hidden-sm" href="#"><span class="glyphicon glyphicon-search"></span></a></div>
+                    <a id="nav-expander" type="button" style="position: absolute; top: 10px; right: 80px; margin: 0 5px 0 5px;" class="nav-expandertype btn btn-default navbar-btn navbar-right nav-shadowbox" href="#"><span class="glyphicon glyphicon-cog"></span></a></div>
                 <button type="button" style="position: absolute; top: 10px; margin: 0 5px 0 5px;" class="btn btn-default navbar-btn nav-shadowbox hidden-xs" data-lat="23, 18.33" data-toggle="modal" data-target="#locationMapModal"><span class="glyphicon glyphicon-map-marker"></span></button>
 
             </div><!-- navbar toggling END -->
@@ -96,28 +117,9 @@
                     <h2>Herzlich Willkommen!</h2>
                 </div><br>
                 <div class="row">
-                    <div class="col-xs-3 well">
-                        <img src="img/user.png" class="img-responsive" alt="Cinque Terre" width="304" height="236">
-                    </div>
-                    <div class="col-xs-9">
-                        <table id="mainTable" class="table table-striped">
-                            <thead><tr><th>Name</th><th>Vorname</th></thead>
-                            <tbody>
-                                <tr><td>Ihr Name</td><td>Ihr Vorname</td>
-                            </tbody>
-                        </table>
-                        <table id="mainTable" class="table table-striped">
-                            <thead><tr><th>E-Mail</th></thead>
-                            <tbody>
-                                <tr><td>Ihre Mail-Adresse</td>
-                            </tbody>
-                        </table>
-                        <table id="mainTable" class="table table-striped">
-                            <thead><tr><th>Telefon-Nr.</th></thead>
-                            <tbody>
-                                <tr><td>Ihre Telefon-Nr.</td>
-                            </tbody>
-                    </div>
+                    <div class="col-xs-12">
+                      
+                            <img src="img/user.png" class="img-responsive" alt="Cinque Terre" width="60%" height="60%">
                 </div>
 
             </div>
